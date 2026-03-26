@@ -2,12 +2,12 @@ import { useDocumentTitle, useScrollTop } from '@/hooks';
 import React from 'react';
 
 const Dashboard = () => {
-  useDocumentTitle('Welcome | Admin Dashboard');
+  useDocumentTitle('Admin Dashboard');
   useScrollTop();
 
   return (
     <div className="loader">
-      <h2>Welcome to admin dashboard</h2>
+      <h2>Welcome to Admin Dashboard</h2>
     </div>
   );
 };

@@ -12,14 +12,6 @@ import PropType from 'prop-types';
 import React from 'react';
 import * as Yup from 'yup';
 
-// Default brand names that I used. You can use what you want
-const brandOptions = [
-  { value: 'Salt Maalat', label: 'Salt Maalat' },
-  { value: 'Betsin Maalat', label: 'Betsin Maalat' },
-  { value: 'Sexbomb', label: 'Sexbomb' },
-  { value: 'Black Kibal', label: 'Black Kibal' }
-];
-
 const FormSchema = Yup.object().shape({
   name: Yup.string()
     .required('Product name is required.')
@@ -106,21 +98,21 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     name="name"
                     type="text"
                     label="* Product Name"
-                    placeholder="Gago"
+                    placeholder="Product"
                     style={{ textTransform: 'capitalize' }}
                     component={CustomInput}
                   />
                 </div>
                 &nbsp;
                 <div className="product-form-field">
-                  <CustomCreatableSelect
-                    defaultValue={{ label: values.brand, value: values.brand }}
-                    name="brand"
-                    iid="brand"
-                    options={brandOptions}
+                  <Field
                     disabled={isLoading}
-                    placeholder="Select/Create Brand"
-                    label="* Brand"
+                    name="brand"
+                    type="text"
+                    label="* Brand Name"
+                    placeholder="Brand"
+                    style={{ textTransform: 'capitalize' }}
+                    component={CustomInput}
                   />
                 </div>
               </div>
